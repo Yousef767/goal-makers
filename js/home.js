@@ -1,11 +1,7 @@
+const servsInner = document.querySelector(".servs-inner");
 const nav = document.getElementById("nav");
 const menu = document.querySelector(".menu");
-const servsInner = document.querySelector(".servs-inner");
 const arrow = document.getElementById("arrow");
-
-menu.addEventListener("click", () => {
-  nav.classList.toggle("active-nav");
-});
 
 servsInner.addEventListener("click", () => {
   servsInner.classList.toggle("showSer");
@@ -17,6 +13,10 @@ window.addEventListener("scroll", () => {
   } else {
     arrow.style.display = "none";
   }
+});
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("active-nav");
 });
 
 arrow.addEventListener("click", () => {

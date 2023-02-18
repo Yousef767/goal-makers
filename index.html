@@ -5,13 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Goal Makers Website" />
+  <link rel="icon" href="./Media/logo-mark.svg" type="x-icon" />
+  <link rel="apple-touch-icon" href="../Media/logo-white.svg" />
   <link rel="stylesheet" href="./scss/style.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
   <title>Goal Makers | Home</title>
 </head>
 
 <body>
-  <nav><!--Start Nav-->
+  <!--Start Nav-->
+  <nav id="nav">
     <div class="logo">
       <img src='./Media/logo-mark.svg' alt="" />
       <span>Goal <br /> Makers</span>
@@ -19,7 +23,7 @@
     <div class="links-inner">
       <div class="links">
         <a href="##">Home</a>
-        <a href="./index.html">About us</a>
+        <a href="##">About us</a>
         <div class="servs-inner">
           <a href="##" class="sv">Services <i class="fa-solid fa-angle-down"></i></a>
           <div class="services">
@@ -38,12 +42,13 @@
           </div>
         </div>
         <a href="#">Clients</a>
-        <a href="#">Contact us</a>
-        <a href="#">العربية</a>
+        <a href="./Pages/contact.html">Contact us</a>
+        <a href="#">العربية
+        </a>
       </div>
       <div class="btns">
         <a href="##">get a quote</a>
-        <button class="menu" onClick={showLinks}>
+        <button class="menu">
           <span></span>
           <span></span>
           <span></span>
@@ -67,6 +72,7 @@
       <i class="fa-light fa-hand-pointer"></i>
       Scroll Down</span>
   </div>
+  <!--Start Icons-->
   <div class="icons">
     <h1>We are the team of enthusiasts</h1>
     <div class="icons-inner">
@@ -84,6 +90,9 @@
       </div>
     </div>
   </div>
+  <!--End Icons-->
+
+  <!--Start We Are-->
   <div class="weAre">
     <div class="weImg">
       <img src="./Media/about-main.jpg" alt="">
@@ -97,6 +106,9 @@
       <a href="#">READ MORE</a>
     </div>
   </div>
+  <!--Start We Are-->
+
+  <!--Start Offers-->
   <div class="weOffer">
     <div class="card"></div>
     <header>
@@ -104,7 +116,7 @@
       <h1>What we can do</h1>
     </header>
     <div class="offersInner">
-      <div class="row">
+      <div class="row"><!-- 1:4 -->
         <div class="row2">
           <div class="offer">
             <img class="w-50" src="./Media/services/seo.svg" alt="">
@@ -126,7 +138,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row"><!-- 5:8 -->
         <div class="row2">
           <div class="offer">
             <img class="w-60" src="./Media/services/ecommerce-dev.svg" alt="">
@@ -148,7 +160,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row"><!-- 9:12 -->
         <div class="row2">
           <div class="offer">
             <img class="w-60" src="./Media/services/content-writing.svg" alt="">
@@ -172,6 +184,9 @@
       </div>
     </div>
   </div>
+  <!--End Offers-->
+
+  <!--Start Tell us-->
   <div class="tellUs">
     <div class="tellUsItems">
       <h2>Tell us about your goals, and we can take it from there</h2>
@@ -181,6 +196,9 @@
       <span></span>
     </div>
   </div>
+  <!--End Tell us-->
+
+  <!--Start Trusted-->
   <div class="trusted">
     <header>
       <h1>Trusted by</h1>
@@ -203,10 +221,10 @@
       </div>
     </div>
   </div>
+  <!--End Trusted-->
+
   <!--End Home-->
-  <div class="arrow" id="arrow">
-    <i class="fa-light fa-arrow-up-long"></i>
-  </div>
+
   <!--Start Footer-->
   <footer>
     <div class="logoFooter">
@@ -216,8 +234,12 @@
     <div class="reachOut">
       <span>Reach out</span>
       <div class="reachLinks">
-        <a href="##">info@goalmaker.net</a>
+        <a href="##">info@goalmakers.net</a>
         <a href="##">+201010071235</a>
+      </div>
+      <div class="reachLinks">
+        <a href="##">Support@goalmaker.net</a>
+        <a href="##">+201010027463</a>
       </div>
       <span>follow us</span>
       <div class="media">
@@ -252,9 +274,21 @@
       </div>
     </div>
   </footer>
-
   <!--End Footer-->
+  <div class="arrow" id="arrow">
+    <i class="fa-light fa-arrow-up-long"></i>
+  </div>
   <script src="./js/main.js"></script>
+  <script>
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 100) {
+        nav.classList.add("nav");
+      } else {
+        nav.classList.remove("nav");
+      }
+    });
+  </script>
+  </script>
 </body>
 
 </html>
