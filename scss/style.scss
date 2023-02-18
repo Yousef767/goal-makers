@@ -91,12 +91,12 @@ nav.nav .logo span {
   a {
     @include flex();
     text-decoration: none;
-    height: 100px;
+    height: 80px;
     padding: 0 20px;
     color: #fff;
     font-size: 1.1em;
     transition: 0.2s;
-    font-weight: 600;
+    font-weight: 500;
     i {
       margin-left: 5px;
       margin-top: 3px;
@@ -112,7 +112,7 @@ nav.nav .logo span {
 }
 .logo {
   display: flex;
-  height: 100px;
+  height: 80px;
   @include flex();
   img {
     width: 30px;
@@ -124,8 +124,10 @@ nav.nav .logo span {
   }
 }
 .btns {
-  padding: 0 20px;
-  height: 100px;
+  width: auto;
+
+  height: 80px;
+  overflow: hidden;
   @include flex();
   a {
     text-decoration: none;
@@ -147,10 +149,11 @@ nav.nav .logo span {
   display: none;
   flex-direction: column;
   position: relative;
-  height: 85px;
+  height: 80px;
   width: 40px;
+  overflow: hidden;
   @include noBorder();
-  span {
+  span{
     height: 3px;
     width: 35px;
     border-radius: 2px;
@@ -291,9 +294,7 @@ nav.nav .logo span {
   .active-nav .links-inner .links {
     left: 0;
   }
-  .active-nav .links-inner{
-    overflow: scroll;
-  }
+
 }
 
 @media (max-width: 500px) {
@@ -493,16 +494,19 @@ nav.nav .logo span {
   width: 100%;
   height: 430px;
   position: relative;
-  overflow: hidden;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
+
 @media (max-width: 450px) {
+  .weAre{
+    gap: 0;
+  }
   .weImg img {
-    height: 370px;
+    height: 380px;
   }
 }
 .circle {
@@ -543,7 +547,16 @@ nav.nav .logo span {
     text-decoration: none;
   }
 }
-
+@media (max-width: 500px) {
+  .weText{
+    h1{
+      font-size: 2.5em;
+    }
+    p{
+      font-size: .9em;
+    }
+  }
+}
 .weOffer {
   width: 100%;
   position: relative;
@@ -1163,5 +1176,101 @@ input[type="submit"]{
       font-size: .8em;
       padding-top: 0;
     }
+  }
+}
+.p100{
+  padding-top: 150px;
+  padding-bottom: 0;
+}
+.p-100{
+  padding-bottom: 100px;
+}
+
+.counter{
+  width: 100%;
+  @include flex();
+  background-color: $gold;
+  flex-wrap: wrap;
+}
+.counterCard{
+  width: 200px;
+  height: 250px;
+  @include flex();
+  flex-direction: column;
+  h1{
+    font-size: 3.5em;
+    font-weight: 800;
+    color: $black;
+  }
+  span{
+    font-size: .9em;
+    color: $black;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+}
+@media (max-width:830px) {
+  .counterCard{
+    height: 200px;
+  }
+}
+@media (max-width:450px) {
+  .counterCard{
+    width: 160px;
+    height: 160px;
+    h1{
+      font-size: 2.5em;
+    }
+    span{
+      font-size: .7em;
+    }
+  }
+}
+
+.cards{
+  width: 100%;
+  padding: 70px 20px;
+  @include flex();
+  gap: 30px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+.cardInner{
+  width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  border: 2px solid $dark-gray;
+  gap: 30px;
+  img{
+    margin-right: auto;
+  }
+}
+.cardTitle{
+  display: flex;
+  flex-direction: column;
+  span{
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 800;
+    color: $black;
+  }
+  p{
+    line-height: 2;
+    font-size: 0.7em;
+    font-weight: 500;
+    color: $black;
+    
+  }
+}
+@media (max-width:400px) {
+  .cards{
+    padding: 50px 0;
+  }
+  .cardInner{
+    width: 90%;
+    height: auto;
   }
 }
