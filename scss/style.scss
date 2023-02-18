@@ -2,7 +2,7 @@
 $gold: #f1b600;
 $light-gold: #f1b70e;
 $gray: #f2f2f2;
-$dark-gray: #F2F2F2;
+$dark-gray: #f2f2f2;
 $black: #23231e;
 * {
   margin: 0;
@@ -32,7 +32,6 @@ $black: #23231e;
 
 body {
   width: 100%;
-  background-color: #2d2d2d;
   &::-webkit-scrollbar {
     width: 5px;
   }
@@ -59,15 +58,15 @@ nav {
   align-items: center;
   z-index: 20;
   transition: 0.2s;
-  .links-inner {
-    @include flex();
-  }
+}
+.links-inner {
+  @include flex();
 }
 nav.nav {
   background-color: #fff;
   box-shadow: 0px 3px 3px #7d7d7d16;
 }
-nav.nav2{
+nav.nav2 {
   background-color: #fff;
   box-shadow: 0px 3px 3px #7d7d7d16;
 }
@@ -88,22 +87,24 @@ nav.nav .logo span {
 }
 .links {
   display: flex;
-  a {
+  list-style: none;
+  li {
     @include flex();
-    text-decoration: none;
     height: 80px;
     padding: 0 20px;
-    color: #fff;
-    font-size: 1.1em;
-    transition: 0.2s;
-    font-weight: 500;
-    i {
-      margin-left: 5px;
-      margin-top: 3px;
+    a {
+      width: 100%;
+      @include flex();
+      font-weight: 500;
+      font-size: 1.1em;
+      text-decoration: none;
+      transition: 0.2s;
+      color: #fff;
+      height: 80px;
     }
   }
 }
-.links a:hover {
+.links li a:hover {
   color: $gold;
 }
 .servs-inner {
@@ -153,7 +154,7 @@ nav.nav .logo span {
   width: 40px;
   overflow: hidden;
   @include noBorder();
-  span{
+  span {
     height: 3px;
     width: 35px;
     border-radius: 2px;
@@ -203,27 +204,45 @@ nav.nav .logo span {
   a {
     display: flex;
     justify-content: left;
-    padding: 5px;
+    padding: 7px;
     text-transform: capitalize;
     height: auto;
-    font-size: 0.7em;
-    color: #000;
+    font-size: 0.8em;
+    text-decoration: none;
+    transition: 0.2s;
+    color: $black;
     &:hover {
       text-decoration: underline;
+      color: $gold;
     }
   }
 }
-.sv {
-  i {
-    transition: 0.2s;
+.wrapper {
+  a {
+    cursor: pointer;
+    i {
+      transition: 0.2s;
+      margin-top: 2px;
+      margin-left: 3px;
+    }
   }
 }
 .servs-inner.showSer .services {
-  height: 325px;
+  height: 370px;
   opacity: 1;
 }
-.showSer .sv i {
+.showSer .wrapper a i {
   transform: rotate(-180deg);
+}
+.servs-inner .wrapper {
+  width: 100%;
+  height: 80px;
+  @include flex();
+  a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -251,14 +270,23 @@ nav.nav .logo span {
     transition: 0.5s;
     background-color: #fff;
     height: 100%;
-    a {
-
-      justify-content: left;
-      padding-left: 20px;
+    overflow: scroll;
+    bottom: 0;
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+    li {
       width: 100%;
-      height: 70px;
-      color: #000;
-      font-size: 1.2em;
+      height: 80px;
+      @include flex();
+      a {
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        width: 100%;
+        color: #000;
+        font-size: 1.2em;
+      }
     }
   }
   .servs-inner {
@@ -267,10 +295,7 @@ nav.nav .logo span {
     flex-direction: column;
     padding: 0;
   }
-  .servs-inner .sv {
-    width: 100%;
-    justify-content: space-between
-  }
+
   .services {
     @include flex();
     width: 100%;
@@ -294,7 +319,6 @@ nav.nav .logo span {
   .active-nav .links-inner .links {
     left: 0;
   }
-
 }
 
 @media (max-width: 500px) {
@@ -409,11 +433,18 @@ nav.nav .logo span {
 @media (max-width: 550px) {
   .home-img {
     header {
-      font-size: 2em;
-      padding-left: 20px;
+      font-size: 2.1em;
+      padding: 0 10px;
       bottom: 40%;
       text-align: center;
       line-height: 2;
+    }
+  }
+}
+@media (max-width: 330px) {
+  .home-img {
+    header {
+      font-size: 1.7em;
     }
   }
 }
@@ -502,7 +533,7 @@ nav.nav .logo span {
 }
 
 @media (max-width: 450px) {
-  .weAre{
+  .weAre {
     gap: 0;
   }
   .weImg img {
@@ -548,12 +579,12 @@ nav.nav .logo span {
   }
 }
 @media (max-width: 500px) {
-  .weText{
-    h1{
+  .weText {
+    h1 {
       font-size: 2.5em;
     }
-    p{
-      font-size: .9em;
+    p {
+      font-size: 0.9em;
     }
   }
 }
@@ -1006,71 +1037,72 @@ footer {
   .reachOut {
     width: 100%;
     align-items: center;
-    span{
-      padding:20px 0;
+    span {
+      padding: 20px 0;
     }
   }
-  .reachLinks{
+  .reachLinks {
     @include flex();
     padding: 0 20px;
     flex-wrap: wrap;
     gap: 20px;
   }
 }
-@media (max-width:500px) {
-  .quickLinks{
+@media (max-width: 500px) {
+  .quickLinks {
     width: 100%;
     @include flex();
-    span{
+    span {
       padding: 20px 0;
     }
   }
-  .qLinks{
+  .qLinks {
     flex-direction: column;
     gap: 15px;
-    a{
+    a {
       width: 100%;
       text-align: center;
     }
   }
-  .reachLinks a{
+  .reachLinks a {
     font-size: 1.2em;
   }
 }
-.black{
+.black {
   background-color: $black;
   padding-top: 50px;
-  .joinInner{
+  .joinInner {
     max-width: 550px;
     width: 100%;
-    h2{
+    h2 {
       color: #fff;
     }
-    a{
+    a {
       color: #000;
       background-color: $gold;
     }
   }
 }
 
-.formInner{
+.formInner {
   @include flex();
   padding: 100px 0;
   background-color: #fff;
   gap: 50px;
   position: relative;
 }
-.title{
+.title {
   width: 500px;
   display: flex;
   flex-direction: column;
 }
-.hd1,.hd2{
-  h1{
+.hd1,
+.hd2 {
+  h1 {
     font-size: 2em;
     padding: 20px 0;
   }
-  span{
+  span {
     line-height: 2;
     padding-right: 10px;
     font-size: 0.9em;
@@ -1078,7 +1110,7 @@ footer {
   }
 }
 
-.map{
+.map {
   width: 100%;
   padding: 30px 0;
 }
@@ -1094,140 +1126,143 @@ footer {
   height: 200px;
   width: 100%;
 }
-form{
+form {
   width: 500px;
   @include flex();
   flex-direction: column;
-  label{
+  label {
     width: 100%;
     display: block;
-    padding:10px 0;
+    padding: 10px 0;
     text-transform: capitalize;
     font-weight: 500;
-    font-size: .9em;
+    font-size: 0.9em;
   }
-  input,select,textarea{
+  input,
+  select,
+  textarea {
     width: 100%;
     @include flex();
     height: 45px;
     @include noBorder();
     border: 2px solid transparent;
     background-color: $gray;
-    transition: .2s;
+    transition: 0.2s;
     padding-left: 10px;
     font-size: 1.1em;
-    &:focus{
+    &:focus {
       border: 2px solid $gold;
     }
   }
 }
-.message{
+.message {
   padding: 10px;
   height: 100px;
   resize: none;
 }
-.submit{
+.submit {
   width: 150px;
   text-transform: uppercase;
   background-color: $gold;
   margin-right: auto;
   font-weight: 700;
-  font-size: .8em;
+  font-size: 0.8em;
 }
-.hd2{
+.hd2 {
   display: none;
 }
-@media (max-width:1100px) {
-  .title{
+@media (max-width: 1100px) {
+  .title {
     padding: 0;
     width: 500px;
   }
-  .hd1{
+  .hd1 {
     display: none;
   }
-  .hd2{
+  .hd2 {
     display: flex;
     flex-direction: column;
   }
-  .formInner{
+  .formInner {
     flex-direction: column-reverse;
     gap: 30px;
     padding: 100px 0 50px 0;
   }
-  form{
+  form {
     margin: 0 auto;
   }
 }
-input[type="submit"]{
+input[type="submit"] {
   cursor: pointer;
 }
-@media (max-width:550px) {
-  .formInner{
+@media (max-width: 550px) {
+  .formInner {
     width: 100%;
   }
-  .title,form{
+  .title,
+  form {
     width: 90%;
   }
-  .hd2{
-    h1{
+  .hd2 {
+    h1 {
       font-size: 1.8em;
     }
-    span{
-      font-size: .8em;
+    span {
+      font-size: 0.8em;
       padding-top: 0;
     }
   }
 }
-.p100{
+.p100 {
   padding-top: 150px;
   padding-bottom: 0;
 }
-.p-100{
+.p-100 {
   padding-bottom: 100px;
 }
 
-.counter{
+.counter {
   width: 100%;
   @include flex();
   background-color: $gold;
   flex-wrap: wrap;
 }
-.counterCard{
+.counterCard {
   width: 200px;
   height: 250px;
   @include flex();
   flex-direction: column;
-  h1{
+  h1 {
     font-size: 3.5em;
     font-weight: 800;
     color: $black;
   }
-  span{
-    font-size: .9em;
+  span {
+    font-size: 0.9em;
     color: $black;
     font-weight: 600;
     text-transform: capitalize;
   }
 }
-@media (max-width:830px) {
-  .counterCard{
+@media (max-width: 830px) {
+  .counterCard {
     height: 200px;
   }
 }
-@media (max-width:450px) {
-  .counterCard{
+@media (max-width: 450px) {
+  .counterCard {
     width: 160px;
     height: 160px;
-    h1{
+    h1 {
       font-size: 2.5em;
     }
-    span{
-      font-size: .7em;
+    span {
+      font-size: 0.7em;
     }
   }
 }
 
-.cards{
+.cards {
   width: 100%;
   padding: 70px 20px;
   @include flex();
@@ -1235,7 +1270,7 @@ input[type="submit"]{
   background-color: #fff;
   flex-wrap: wrap;
 }
-.cardInner{
+.cardInner {
   width: 350px;
   height: 300px;
   display: flex;
@@ -1243,33 +1278,32 @@ input[type="submit"]{
   padding: 50px 30px;
   border: 2px solid $dark-gray;
   gap: 30px;
-  img{
+  img {
     margin-right: auto;
   }
 }
-.cardTitle{
+.cardTitle {
   display: flex;
   flex-direction: column;
-  span{
+  span {
     padding: 10px 0;
     text-transform: uppercase;
     font-size: 1em;
     font-weight: 800;
     color: $black;
   }
-  p{
+  p {
     line-height: 2;
     font-size: 0.7em;
     font-weight: 500;
     color: $black;
-    
   }
 }
-@media (max-width:400px) {
-  .cards{
+@media (max-width: 400px) {
+  .cards {
     padding: 50px 0;
   }
-  .cardInner{
+  .cardInner {
     width: 90%;
     height: auto;
   }

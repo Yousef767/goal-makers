@@ -18,5 +18,5 @@ function startCount(el) {
     if (el.textContent == goal) {
       clearInterval(count);
     }
-  }, 3000 / goal);
+  }, 2000 / goal);
 }
