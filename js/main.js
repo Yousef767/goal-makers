@@ -11,6 +11,10 @@ servsInner.addEventListener("click", () => {
   servsInner.classList.toggle("showSer");
 });
 
+servsInner.addEventListener("blur", () => {
+  servsInner.classList.toggle("showSer");
+});
+
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 500) {
     arrow.style.display = "flex";
