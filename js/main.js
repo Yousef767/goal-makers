@@ -11,9 +11,6 @@ servsInner.addEventListener("click", () => {
   servsInner.classList.toggle("showSer");
 });
 
-servsInner.addEventListener("blur", () => {
-  servsInner.classList.toggle("showSer");
-});
 
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 500) {
@@ -22,6 +19,7 @@ window.addEventListener("scroll", () => {
     arrow.style.display = "none";
   }
 });
+
 
 arrow.addEventListener("click", () => {
   window.scrollTo(0,0)

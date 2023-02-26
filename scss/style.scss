@@ -2,8 +2,8 @@
 $gold: #f1b600;
 $light-gold: #f1b70e;
 $gray: #f2f2f2;
-$dark-gray: #f2f2f2;
 $black: #23231e;
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +32,7 @@ $black: #23231e;
 
 body {
   width: 100%;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     width: 5px;
   }
@@ -64,7 +65,7 @@ nav {
 }
 nav.nav {
   background-color: #fff;
-  box-shadow: 0px 3px 3px #7d7d7d16;
+  box-shadow: 0px 3px 3px #8787870e;
 }
 nav.nav2 {
   background-color: #fff;
@@ -115,6 +116,7 @@ nav.nav .logo span {
   display: flex;
   height: 80px;
   @include flex();
+  text-decoration: none;
   img {
     width: 30px;
   }
@@ -265,7 +267,7 @@ nav.nav .servs-inner.showSer .wrapper a {
     padding: 0 10px;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .menu {
     display: flex;
   }
@@ -657,7 +659,7 @@ nav.nav .servs-inner.showSer .wrapper a {
   padding: 40px 25px;
   background-color: #fff;
   text-decoration: none;
-  &:hover span{
+  &:hover span {
     color: $gold;
   }
   span {
@@ -826,6 +828,7 @@ nav.nav .servs-inner.showSer .wrapper a {
   @include circle(50px);
   background-color: #fff;
   box-shadow: 0px 0px 5px #02020256;
+  cursor: pointer;
 }
 .fa-arrow-up-long {
   font-size: 1.3em;
@@ -994,7 +997,7 @@ footer {
   display: flex;
   gap: 30px;
   padding: 10px 0;
-  a{
+  a {
     color: $black;
     i {
       font-size: 1.7em;
@@ -1032,6 +1035,7 @@ footer {
     text-decoration: none;
     font-weight: 500;
     text-transform: capitalize;
+    transition: 0.2s;
     &:hover {
       color: $gold;
     }
@@ -1125,6 +1129,7 @@ footer {
 }
 
 .map {
+  @include flex();
   width: 100%;
   padding: 30px 0;
 }
@@ -1135,10 +1140,12 @@ footer {
   width: 100%;
 }
 .mapouter {
-  position: relative;
-  text-align: right;
   height: 200px;
   width: 100%;
+  margin: 0 auto;
+}
+.m20 {
+  margin: 0 20px;
 }
 form {
   width: 500px;
@@ -1178,7 +1185,7 @@ form {
   width: 150px;
   text-transform: uppercase;
   background-color: $gold;
-  margin-right: auto;
+  margin: 0 auto;
   font-weight: 700;
   font-size: 0.8em;
 }
@@ -1234,7 +1241,9 @@ input[type="submit"] {
 .p-100 {
   padding-bottom: 100px;
 }
-
+.pt-100 {
+  padding-top: 100px;
+}
 .counter {
   width: 100%;
   @include flex();
@@ -1290,7 +1299,7 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   padding: 50px 30px;
-  border: 2px solid $dark-gray;
+  border: 2px solid $gray;
   gap: 30px;
   img {
     margin-right: auto;
@@ -1366,6 +1375,11 @@ input[type="submit"] {
     text-align: left;
     font-size: 1.7em;
   }
+  h3 {
+    padding: 20px 0;
+    width: 100%;
+    text-align: left;
+  }
 }
 .key {
   width: 100%;
@@ -1377,6 +1391,9 @@ input[type="submit"] {
     font-size: 1.3em;
     margin-top: 5px;
   }
+  .fa-circle-xmark {
+    color: red;
+  }
   p {
     line-height: 2;
     padding: 0;
@@ -1385,7 +1402,7 @@ input[type="submit"] {
 @media (max-width: 900px) {
   .serviceTitle {
     h1 {
-      font-size: 1.7em;
+      font-size: 1.9em;
     }
     p {
       font-size: 0.8em;
@@ -1393,7 +1410,7 @@ input[type="submit"] {
   }
   .key {
     p {
-      font-size: 0.7em;
+      font-size: 0.8em;
     }
   }
 }
@@ -1450,7 +1467,9 @@ input[type="submit"] {
 .h-400 {
   height: 400px;
 }
-
+.pb-30 {
+  padding-bottom: 30px;
+}
 @media (max-width: 550px) {
   .h-300,
   .h-400 {
@@ -1496,60 +1515,403 @@ input[type="submit"] {
 
 @keyframes fadeleft {
   0% {
-      transform: translateX(-100px);
-      opacity: 0;
+    transform: translateX(-100px);
+    opacity: 0;
   }
 
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes faderight {
   0% {
-      transform: translateX(100px);
-      opacity: 0;
+    transform: translateX(100px);
+    opacity: 0;
   }
 
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes fadetop {
   0% {
-      transform: translateY(-100px);
-      opacity: 0;
+    transform: translateY(-100px);
+    opacity: 0;
   }
 
   100% {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes fadebtm {
   0% {
-      transform: translateY(100px) scale(.8);
-      opacity: 0;
+    transform: translateY(100px) scale(0.8);
+    opacity: 0;
   }
 
   100% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }
 @keyframes fadebtmn {
   0% {
-      transform: translateY(100px);
-      opacity: 0;
+    transform: translateY(100px);
+    opacity: 0;
   }
 
   100% {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
+.inner {
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.featuredInner {
+  @include flex();
+  padding: 130px 20px 70px 20px;
+  flex-wrap: wrap-reverse;
+  a{
+    text-decoration: none;
+    img {
+      width: 550px;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+}
+.blogCard {
+  width: 550px;
+  padding: 50px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: $gold;
+  h6 {
+    color: #1d211e;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  h1 {
+    padding: 20px 0;
+    font-size: 1.9em;
+    font-weight: 800;
+    color: $black;
+  }
+  p {
+    color: $black;
+    font-weight: 500;
+    opacity: 0.9;
+    font-size: 1em;
+    line-height: 2;
+  }
+  a {
+    width: 150px;
+    height: 50px;
+    @include flex();
+    background-color: $black;
+    color: #fff;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-decoration: none;
+  }
+}
+.recentHeader {
+  h1 {
+    font-weight: 800;
+    color: $black;
+    font-size: 2.5em;
+  }
+}
+.m1100 {
+  max-width: 1140px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.postsSections {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  gap: 10px;
+  .active {
+    color: #fff;
+    background-color: $black;
+  }
+}
+
+.postsSection {
+  padding: 15px;
+  border: 2px solid $gray;
+  color: #a8a8a8;
+  font-weight: 700;
+  font-size: 0.9em;
+  white-space: nowrap;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .m1100 {
+    width: 100%;
+  }
+  .featuredInner {
+    a{
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .blogCard {
+    padding: 40px 0;
+    background-color: transparent;
+    h6 {
+      font-size: 0.8em;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+    p {
+      display: none;
+    }
+    a {
+      display: none;
+    }
+  }
+  .featuredInner {
+    padding: 130px 20px 0 20px;
+  }
+  .featuredInner a img {
+    height: 300px;
+  }
+}
+
+.postsInner {
+  @include flex();
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1150px;
+  width: 100%;
+  padding: 0 20px 50px 20px;
+  gap: 30px;
+  display: none;
+}
+.post {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  span {
+    padding: 15px 0;
+    color: $black;
+    font-size: 0.8em;
+    text-transform: capitalize;
+  }
+  h3 {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: $black;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+  }
+}
+@media (max-width: 770px) {
+  .post {
+    width: 100%;
+  }
+}
+.blogPage {
+  max-width: 1150px;
+  width: 100%;
+  padding: 130px 20px 20px 20px;
+  margin: 0 auto;
+}
+.blogPageHeader {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    padding: 20px 0;
+    font-size: 2.5em;
+  }
+  .date {
+    color: gray;
+    font-size: 0.9em;
+  }
+  .pageInfo {
+    color: $black;
+    font-size: 0.9em;
+    padding-bottom: 30px;
+  }
+}
+.desc {
+  padding: 20px 0;
+  line-height: 2;
+  font-size: 0.9em;
+}
+.part {
+  h2 {
+    padding-top: 30px;
+  }
+  p {
+    font-size: 0.9em;
+    padding: 20px 0;
+    line-height: 2;
+  }
+}
+.headLine {
+  font-size: 0.9em;
+  padding: 5px 0;
+}
+
+.recInner {
+  display: flex;
+  flex-direction: column;
+  max-width: 1150px;
+  width: 100%;
+  padding: 0 20px 50px 20px;
+  margin: 0 auto;
+  h1 {
+    font-size: 2.5em;
+    padding-bottom: 30px;
+  }
+  .postsInner {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .story-container h1 {
+    font-size: 1em;
+  }
+  .blogPageHeader {
+    h1 {
+      font-size: 1.7em;
+    }
+    .date,
+    .pageInfo {
+      font-size: 0.7em;
+    }
+  }
+  .desc {
+    font-size: 0.8em;
+  }
+  .part {
+    h2 {
+      padding-top: 10px;
+      font-size: 1.2em;
+    }
+    p {
+      font-size: 0.8em;
+    }
+  }
+  .headLine {
+    font-size: 0.8em;
+  }
+  .recInner h1 {
+    font-size: 1.7em;
+  }
+  .recentHeader h1 {
+    font-size: 1.7em;
+  }
+}
+.story-container {
+  max-width: 1170px;
+  width: 100%;
+  background-size: 375px 806px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  padding: 30px 20px 30px 5px;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  h1 {
+    width: 100%;
+    text-align: left;
+    padding: 30px 0 30px 15px;
+    font-weight: 800;
+    font-size: 2.5em;
+  }
+
+  .story-inner {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .story-bubbles {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow-y: hidden;
+      padding: 5px;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background-color: transparent;
+      }
+      .bubbles {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        width: max-content;
+        height: auto;
+        .text {
+          span {
+            color: gray;
+            padding: 15px 20px;
+            display: block;
+            font-weight: 700;
+            text-transform: capitalize;
+            white-space: nowrap;
+            border: 2px solid gray;
+            margin-left: 10px;
+            transition: 0.2s;
+            cursor: pointer;
+            font-size: 0.9em;
+          }
+          .active {
+            color: #fff;
+            background-color: $black;
+            border: 2px solid $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 450px) {
+  .story-container h1 {
+    font-size: 2em;
+  }
+}
