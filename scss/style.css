@@ -2153,7 +2153,7 @@ input[type=submit] {
   font-size: 1em;
   line-height: 2;
 }
-.blogCard a {
+.blogCard li a {
   width: 150px;
   height: 50px;
   display: flex;
@@ -2211,8 +2211,9 @@ input[type=submit] {
 }
 @media (max-width: 450px) {
   .blogCard {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
     background-color: transparent;
+    height: auto;
   }
   .blogCard h6 {
     font-size: 0.8em;
@@ -2223,7 +2224,7 @@ input[type=submit] {
   .blogCard p {
     display: none;
   }
-  .blogCard a {
+  .blogCard li {
     display: none;
   }
   .featuredInner {
@@ -2231,6 +2232,17 @@ input[type=submit] {
   }
   .featuredInner a img {
     height: 300px;
+  }
+}
+@media (max-width: 1130px) {
+  .blogCard {
+    width: 100%;
+  }
+  .featuredInner a {
+    width: 100%;
+  }
+  .featuredInner a img {
+    width: 100%;
   }
 }
 .postsInner {

@@ -1621,8 +1621,9 @@ input[type="submit"] {
     font-size: 1em;
     line-height: 2;
   }
-  a {
-    width: 150px;
+  li {
+    a{
+      width: 150px;
     height: 50px;
     @include flex();
     background-color: $black;
@@ -1631,6 +1632,7 @@ input[type="submit"] {
     font-weight: 600;
     font-size: 0.9em;
     text-decoration: none;
+    }
   }
 }
 .recentHeader {
@@ -1682,8 +1684,9 @@ input[type="submit"] {
 }
 @media (max-width: 450px) {
   .blogCard {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
     background-color: transparent;
+    height:auto;
     h6 {
       font-size: 0.8em;
     }
@@ -1693,7 +1696,7 @@ input[type="submit"] {
     p {
       display: none;
     }
-    a {
+    li {
       display: none;
     }
   }
@@ -1704,7 +1707,17 @@ input[type="submit"] {
     height: 300px;
   }
 }
-
+@media (max-width: 1130px) {
+  .blogCard{
+    width: 100%;
+  }
+  .featuredInner a {
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+}
 .postsInner {
   @include flex();
   flex-wrap: wrap;
