@@ -206,7 +206,7 @@ nav.nav .logo span {
   a {
     display: flex;
     justify-content: left;
-    padding: 7px;
+    padding: 7px 10px;
     text-transform: capitalize;
     height: auto;
     font-size: 0.8em;
@@ -305,6 +305,10 @@ nav.nav .servs-inner.showSer .wrapper a {
         color: #000;
         font-size: 1.2em;
       }
+    }
+    .servs-inner.showSer .services {
+      height: auto;
+      opacity: 1;
     }
   }
   .servs-inner {
@@ -465,10 +469,12 @@ nav.nav .servs-inner.showSer .wrapper a {
 .icons-inner {
   display: flex;
   gap: 80px;
+  direction: rtl;
 }
 .icon {
   @include flex();
   flex-direction: column;
+  direction: rtl;
   gap: 20px;
   span {
     font-size: 0.9em;
@@ -507,10 +513,13 @@ nav.nav .servs-inner.showSer .wrapper a {
   }
   .icon {
     gap: 30px;
-    justify-content: left;
+    justify-content: right;
     width: 100%;
-    padding-left: 30px;
+    padding-right: 30px;
     flex-direction: row;
+  }
+  .r10{
+    padding-right: 10px;
   }
 }
 
