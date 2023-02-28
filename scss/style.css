@@ -2153,6 +2153,9 @@ input[type=submit] {
   font-size: 1em;
   line-height: 2;
 }
+.blogCard li {
+  list-style: none;
+}
 .blogCard li a {
   width: 150px;
   height: 50px;

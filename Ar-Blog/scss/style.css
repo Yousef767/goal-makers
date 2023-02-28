@@ -2153,7 +2153,10 @@ input[type=submit] {
   font-size: 1em;
   line-height: 2;
 }
-.blogCard a {
+.blogCard li {
+  list-style: none;
+}
+.blogCard li a {
   width: 150px;
   height: 50px;
   display: flex;
@@ -2165,6 +2168,7 @@ input[type=submit] {
   font-weight: 600;
   font-size: 0.9em;
   text-decoration: none;
+  margin-left: auto;
 }
 
 .recentHeader h1 {
@@ -2205,6 +2209,17 @@ input[type=submit] {
   cursor: pointer;
 }
 
+@media (max-width: 1130px) {
+  .blogCard {
+    width: 100%;
+  }
+  .featuredInner a {
+    width: 100%;
+  }
+  .featuredInner a img {
+    width: 100%;
+  }
+}
 @media (max-width: 600px) {
   .m1100 {
     width: 100%;
@@ -2215,8 +2230,9 @@ input[type=submit] {
 }
 @media (max-width: 450px) {
   .blogCard {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
     background-color: transparent;
+    height: auto;
   }
   .blogCard h6 {
     font-size: 0.8em;
@@ -2227,7 +2243,7 @@ input[type=submit] {
   .blogCard p {
     display: none;
   }
-  .blogCard a {
+  .blogCard li {
     display: none;
   }
   .featuredInner {
