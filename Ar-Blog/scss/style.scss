@@ -955,8 +955,11 @@ footer {
 }
 .logoFooter {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 30px;
+  text-decoration: none;
+  color: $black;
   img {
     width: 50px;
   }
@@ -967,7 +970,9 @@ footer {
   }
 }
 .reachOut {
+  width: 500px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   span {
     text-transform: uppercase;
@@ -978,8 +983,10 @@ footer {
   }
 }
 .reachLinks {
+  width: 100%;
+  align-items: center;
   display: flex;
-  gap: 30px;
+  justify-content: space-between;
   padding: 10px 0;
   margin-top: 10px;
   a {
@@ -1011,6 +1018,7 @@ footer {
 
 .quickLinks {
   display: flex;
+  align-items: center;
   flex-direction: column;
   span {
     text-transform: uppercase;
@@ -1023,7 +1031,7 @@ footer {
 
 .qLinks {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 .co {
   display: flex;
@@ -1033,7 +1041,7 @@ footer {
     font-size: 0.8em;
     color: $black;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: capitalize;
     transition: 0.2s;
     &:hover {
@@ -1130,7 +1138,7 @@ footer {
 
 .map {
   @include flex();
-  width: 100%;
+  width: 520px;
   padding: 30px 0;
 }
 .gmap_canvas {
@@ -1218,6 +1226,9 @@ input[type="submit"] {
 }
 @media (max-width: 550px) {
   .formInner {
+    width: 100%;
+  }
+  .map{
     width: 100%;
   }
   .title,
