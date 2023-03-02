@@ -858,7 +858,7 @@ nav.nav .servs-inner.showSer .wrapper a {
   @include flex();
   flex-wrap: wrap;
   padding: 50px 15px;
-  gap: 40px;
+  gap: 30px;
   img {
     width: 120px;
   }
@@ -953,8 +953,11 @@ footer {
 }
 .logoFooter {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 30px;
+  text-decoration: none;
+  color: $black;
   img {
     width: 50px;
   }
@@ -965,6 +968,8 @@ footer {
   }
 }
 .reachOut {
+  width: 500px;
+  align-items: center;
   display: flex;
   flex-direction: column;
   span {
@@ -977,8 +982,10 @@ footer {
   }
 }
 .reachLinks {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   display: flex;
-  gap: 30px;
   padding: 10px 0;
   margin-top: 10px;
   a {
@@ -1009,7 +1016,9 @@ footer {
 }
 
 .quickLinks {
+
   display: flex;
+  align-items: center;
   flex-direction: column;
   span {
     text-transform: uppercase;
@@ -1022,7 +1031,7 @@ footer {
 
 .qLinks {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 .co {
   display: flex;
@@ -1132,7 +1141,7 @@ footer {
 
 .map {
   @include flex();
-  width: 100%;
+  width: 520px;
   padding: 30px 0;
 }
 .gmap_canvas {
@@ -1222,6 +1231,9 @@ input[type="submit"] {
 }
 @media (max-width: 550px) {
   .formInner {
+    width: 100%;
+  }
+  .map{
     width: 100%;
   }
   .title,
